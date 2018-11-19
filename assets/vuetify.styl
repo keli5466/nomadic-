@@ -1,0 +1,26 @@
+// Don't bring in full list of colors
+$color-pack = false
+
+// Import library a la cart so I can exclude some things I don't want.
+// Note: Globbing didn't work with ~, thus the node_modules ref
+@import '../node_modules/vuetify/src/stylus/settings/*'
+@import '../node_modules/vuetify/src/stylus/generic/*'
+// @import '../node_modules/vuetify/src/stylus/elements/*'
+// @import '../node_modules/vuetify/src/stylus/tools/*'
+// @import '../node_modules/vuetify/src/stylus/trumps/*'
+
+// I don't think I need to dot his because the ala cart loading of components
+// and that one babel plugin does this
+// @import '../node_modules/vuetify/src/stylus/components/*'
+
+// Shared overrides
+@import '~@nomadic/library/assets/vuetify-overrides'
+@import './vuetify/*'
+
+.v-expansion-panel
+	// box-shadow none
+	// border-top 0
+	// border-bottom grey-border
+	.v-icon
+		color blue!important
+		font-size rem(13px)

@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "dependencies": {
+    "coffeescript": "^2.3.1",
+    "contentful": "^7.0.3"
+  }
+}

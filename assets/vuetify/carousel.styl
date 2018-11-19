@@ -1,0 +1,106 @@
+body // Increase specifity
+
+	// Vars found in definitions
+	.v-carousel
+		height auto
+		box-shadow none !important
+		.v-icon
+			add-property('font-size', s('%s !important', rem(34px)))
+
+	//aligns image to left so there is no space
+	.v-carousel__item
+		left 0
+
+		// Override transition
+		&.tab-reverse-transition-enter-active, &.tab-reverse-transition-leave-active,
+		&.tab-transition-enter-active, &.tab-transition-leave-active
+			transition .6s ease-in-out-quart
+		&.tab-reverse-transition-enter, &.tab-transition-leave-to
+			transform translateX(-100%)
+		&.tab-reverse-transition-leave-to, &.tab-transition-enter
+			transform translateX(100%)
+
+	// In viewport transitions for arrows
+	.v-carousel__next,
+	.v-carousel__prev
+		transition opacity .4s, margin .8s ease-out-quint
+		transition-delay 0.5s
+		/.v-carousel:not(.in-viewport) ^[-1..-1]
+			opacity 0
+	/.v-carousel:not(.in-viewport) .v-carousel__prev
+		margin-left rem(-40px)
+	/.v-carousel:not(.in-viewport) .v-carousel__next
+		margin-right rem(-40px)
+
+	// Transition in the controls
+	.v-carousel__controls
+		transition opacity .4s
+		transition-delay 0.7s
+		/.v-carousel:not(.in-viewport) ^[-1..-1]
+			opacity 0
+
+	// Arrows
+	@media (min-width tablet)
+		.v-carousel__next
+		.v-carousel__prev
+			.v-btn--icon
+				content ''
+				background rgba(black, 0.4)
+				border-radius 100%
+				top auto
+				left auto
+				height 68px
+				width @height
+				transition opacity 0.4s vtfy-animation
+			&:hover
+				.v-btn--icon:before
+					opacity 0.6
+				i
+					color black!important
+
+		// Keeping the Active state/ripple effect from vuetify
+		.v-carousel__next
+			right max-w-gutter
+			&:hover
+				i
+					transform scale(1.1) translateX(3px)
+
+		.v-carousel__prev
+			left max-w-gutter
+			&:hover
+				i
+					transform scale(1.1) translateX(-3px)
+
+	// Hide prev button for tablet
+	@media (max-width tablet)
+		.v-carousel__prev
+			display none
+		.v-carousel__next
+			right 20px
+			.v-btn--icon
+				height rem(68px)
+				width @height
+				&:before
+					background-color transparent
+
+	// Keeps arrow white on active ripple
+	i
+		z-index 8
+
+	// DELIMITERS
+	.v-carousel__controls
+		display flex
+		.v-btn
+			width 9px
+			margin 0 2.5px!important //VC style override
+			&:before
+				display none
+		.v-icon
+			opacity 1
+			&:hover
+				opacity 0.8
+		.v-carousel__controls__item--active .v-icon
+			color blue
+
+	.icon-dot:before
+		font-size 14px !important

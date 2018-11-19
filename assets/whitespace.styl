@@ -1,0 +1,27 @@
+
+// Standard max-w
+.max-w
+	max-width max-w
+	margin-h auto
+	padding-h max-w-gutter
+	@media (max-width tablet)
+		padding-h mobile-gutter
+
+// Wider max-w, like in header
+.max-w-wide
+	max-width max-w
+	margin-h auto
+	padding-h mobile-gutter
+
+.inner-gutter
+	margin-h auto
+	padding-h max-w-gutter
+	@media (max-width tablet)
+		padding-h mobile-gutter * 2
+	@media (max-width mobile)
+		padding-h mobile-gutter
+
+.large-mobile-gutter
+	@media (max-width tablet)
+		margin-h auto
+		padding-h mobile-gutter * 2

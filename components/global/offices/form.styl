@@ -1,0 +1,90 @@
+input-v-space = 15px
+
+// Fill the container
+.v-form
+	width 100%
+
+// Style form labels
+label
+	display block
+	color near-black
+	font medium 16px gotham
+	line-height 1.75
+	margin-top rem(input-v-space)
+
+// required
+.required:after
+	content '*'
+	color red
+
+// Split up some fields
+.two-col
+	display flex
+	flex-wrap wrap
+	justify-content space-between
+	flex-direction column
+	@media (min-width mobile)
+		margin-bottom rem(35px)
+		flex-direction row
+		> *
+			width 47% // Eyeballed
+			// spaces top and bottom input
+			&:first-child
+				.v-input:last-child
+					margin-top rem(input-v-space)
+
+// Move around margins on inputs
+>>> .v-input__slot
+	min-height 52px
+	margin-bottom 0
+	line-height 1.75
+	margin-top 7px
+	input
+		padding-v 5px
+
+	.v-label
+		font-size 16px, true
+
+	// hides resize
+	textarea
+		resize none
+
+// Actions row
+footer
+	display flex
+	align-items center
+	flex-wrap wrap
+	margin-top rem(35px)
+	@media (max-width mobile)
+		flex-direction column
+		margin auto
+		> *
+			width 100%
+			margin-h auto
+		.notes
+			text-align right
+			margin-v 5px
+		.btn
+			width 100%
+
+// Container of buttons
+.actions
+	margin-left auto
+
+// Increase size of button
+.btn
+	width 300px
+
+.notes
+	font-size 14px
+	color near-black
+	opacity 0.75
+	line-height 2
+	&:before
+		content '*'
+		color red
+
+// global overrides of inputs and forms
+input
+	&:-webkit-autofill
+		background-color transparent !important

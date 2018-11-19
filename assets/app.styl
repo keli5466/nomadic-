@@ -1,0 +1,40 @@
+// Load fonts first
+@import '~assets/fonts/index.styl'
+
+// Load boilerplate.  Had to put normailze in the script section because webpack
+// was having trouble resolving.  I think the .css suffix was the issue.
+@require '~bukwild-stylus-library/boilerplate'
+
+// Veutify syles
+@import './vuetify'
+
+// Set font-sizes so rem values for responsive effects.  Combined with the
+// font() call on `body`, this scales from 20px down to 14px
+:root
+	mq-values(font-size, 115%, 70%, max-w)
+
+// Overrides overflow-y: scroll set in 'resest.styl'(this prevents the body lock scroll from working as expected)
+html
+	overflow-y initial
+
+// Default fonts styles
+body
+	color black
+	background #f2f2f2
+	font-family Roboto
+
+// Load other global stylus files
+@import './whitespace.styl'
+@import './transitions.styl'
+@import './typography.styl'
+
+// General styles
+.mobile
+	@media (min-width mobile)
+		display none
+.tablet
+	@media (min-width tablet)
+		display none !important
+.desktop
+	@media (max-width tablet - 1px)
+		display none !important

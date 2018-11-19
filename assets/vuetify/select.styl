@@ -1,0 +1,20 @@
+body // Increase specifity
+
+	.v-select
+		font-weight 500
+		.v-icon
+			color blue
+			add-property('font-size', s('%s !important', rem(10px)))
+
+	.v-input__slot
+		box-shadow none!important
+		border blue 1px solid
+		font-size 14px!important
+		padding rem(10px) 12px!important
+		border-radius menu-border-radius !important
+
+	// removes a read only input field that is prevents the text from centering
+	.v-select__selections
+		justify-content center
+		input
+			display none

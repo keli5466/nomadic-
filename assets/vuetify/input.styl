@@ -1,0 +1,41 @@
+body // Increase specifity
+
+	// Footer newsletter input
+	.newsletter
+		.theme--light.v-text-field--outline
+			.v-input__slot
+				min-height 3.125rem //match buyticket button height
+
+			// Only add margins above input if there is a label
+			&.v-text-field
+				label + input
+					margin-top 12px
+				.v-label
+					height auto
+					line-height unset
+				.v-label--active
+					transform translateY(-10px) scale(0.75)
+
+	.theme--light.v-text-field--outline
+		.v-input__slot
+			border-width 1px !important
+			border-radius menu-border-radius
+			// Reduce v-pad
+			padding-top 0px !important
+			padding-bottom rem(2px) !important
+
+		// Only add margins above input if there is a label
+		&.v-text-field
+			input
+				margin-top 11px
+			label + input
+				margin-top 22px
+
+		// Set the color to a light grey
+		&:not(.v-input--is-focused) .v-input__slot
+			border-color border-grey
+
+		// Give input an error border color
+		&.error--text
+			.v-input__slot
+				border-color red

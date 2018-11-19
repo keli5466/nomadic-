@@ -1,0 +1,44 @@
+/**
+ * User by offices and locations selectors
+ */
+
+break = tablet - 1px
+
+.carousel-info-selector
+	padding-bottom v-space
+
+	// Re-order on regions
+	@media (max-width break)
+		display flex
+		flex-direction column
+		.selector
+			order 1
+		.v-carousel
+			order 2
+		.info-container
+			order 3
+
+// Container of the selector
+.selector
+	margin-top v-space
+	margin-bottom v-space-mobile
+	text-align center
+	@media (max-width break)
+		width 100%
+		margin-top v-space-mobile
+
+// If there is only a single choice
+.single-selector
+	margin-top 10px
+	font-size 16px, true
+
+// The actual selector
+.v-select
+	width 100%
+	max-width 320px
+	white-space nowrap
+	margin 30px auto 0
+
+// Center headlines
+.headline3
+	text-align center

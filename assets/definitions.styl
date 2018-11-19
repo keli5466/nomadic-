@@ -1,0 +1,55 @@
+/**
+ * Shared
+ */
+@require '~@nomadic/library/assets/definitions'
+@require '~assets/fonts/icomoon/variables'
+icomoon-font-path = '~/assets/fonts/icomoon/fonts'
+
+/**
+ * Vars
+ */
+
+// Breakpoints
+desktop = 1368px
+three-col-break = 1150px
+tablet-landscape = 1024px
+tablet = 768px
+mobile-landscape = 580px
+mobile = 500px
+mobile-small = 374px
+menu-break = 650px
+
+// Transitions
+smooth-in = cubic-bezier(.19,1,.22,1)
+smooth-out = cubic-bezier(.55,.04,.95,.41)
+smooth-in-out = cubic-bezier(.8,0,.2,1)
+t-time = 500ms
+
+// Vuetify
+delimi-height = 27px
+vtfy-animation = cubic-bezier(0, 0, 0.2, 1)
+
+// Layout
+header-h = rem(80px)
+
+// Whitespace
+max-w = 1920px
+max-w-gutter = rem(120px)
+mobile-gutter = rem(32px)
+v-space = rem(80px)
+v-space-mobile = rem(54px)
+
+// Z-indexes
+header-z = 10 // Below the dialog, which is like 200
+popper-z = 300 // Above dialogs and overlays
+
+/**
+ * Mixins
+ */
+// Mixins must be relative to `resolve.root` (the "~") since this module may be
+// included at any folder depth. Globing is not possible here because the glob-er
+// doesn't work within @import-ed files.
+
+// The Bukwild shared stylus library
+@require '~bukwild-stylus-library';
+support-for-ie = false // Don't generate px values with rem function
